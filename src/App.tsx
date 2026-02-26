@@ -111,7 +111,7 @@ export default function App() {
       <header className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-6"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img src="/logo.jpg" alt="Maricy Arruda Logo" className="h-12 w-auto" />
+            <img src="logo.jpg" alt="Maricy Arruda Logo" className="h-12 w-auto" />
             <span className="text-xl font-serif font-bold text-brand-primary">
               Maricy Arruda
             </span>
@@ -126,7 +126,6 @@ export default function App() {
             <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="relative bg-brand-accent text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-brand-accent/90 transition-all shadow-lg flex items-center gap-2 group">
               <MessageCircle className="w-4 h-4" />
               Falar com Especialista
-              {/* Speech bubble / Badge */}
               <span className="absolute -top-2 -right-1 flex h-5 w-5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-brand-accent text-[10px] font-black items-center justify-center shadow-sm">
@@ -217,7 +216,7 @@ export default function App() {
             >
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                 <img 
-                  src="/hero.jpg" 
+                  src="hero.jpg" 
                   alt="Dra. Maricy Arruda" 
                   className="w-full h-auto object-cover aspect-[4/5]"
                   referrerPolicy="no-referrer"
@@ -342,7 +341,7 @@ export default function App() {
             <div className="order-1 md:order-2">
               <div className="relative">
                 <img 
-                  src="/hero.jpg" 
+                  src="hero.jpg" 
                   alt="Dra. Maricy Arruda" 
                   className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-[4/5] object-top"
                   referrerPolicy="no-referrer"
@@ -398,7 +397,7 @@ export default function App() {
                       className="rounded-xl overflow-hidden shadow-md h-40"
                     >
                       <img 
-                        src={`/interno-${i}.jpeg`} 
+                        src={`interno-${i}.jpeg`} 
                         alt={`Escritório ${i}`} 
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
