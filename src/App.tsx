@@ -21,6 +21,9 @@ import ReactGA from "react-ga4";
 const WHATSAPP_NUMBER = "5517991234567"; 
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de uma consulta sobre direito previdenciário.`;
 
+// Esta variável pega o caminho correto do site no GitHub automaticamente
+const BASE_URL = import.meta.env.BASE_URL;
+
 const services = [
   {
     title: "Aposentadoria por Idade",
@@ -111,7 +114,7 @@ export default function App() {
       <header className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-6"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img src="logo.jpg" alt="Maricy Arruda Logo" className="h-12 w-auto" />
+            <img src={`${BASE_URL}logo.jpg`} alt="Maricy Arruda Logo" className="h-12 w-auto" />
             <span className="text-xl font-serif font-bold text-brand-primary">
               Maricy Arruda
             </span>
@@ -216,7 +219,7 @@ export default function App() {
             >
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                 <img 
-                  src="hero.jpg" 
+                  src={`${BASE_URL}hero.jpg`} 
                   alt="Dra. Maricy Arruda" 
                   className="w-full h-auto object-cover aspect-[4/5]"
                   referrerPolicy="no-referrer"
@@ -341,7 +344,7 @@ export default function App() {
             <div className="order-1 md:order-2">
               <div className="relative">
                 <img 
-                  src="hero.jpg" 
+                  src={`${BASE_URL}hero.jpg`} 
                   alt="Dra. Maricy Arruda" 
                   className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-[4/5] object-top"
                   referrerPolicy="no-referrer"
@@ -397,7 +400,7 @@ export default function App() {
                       className="rounded-xl overflow-hidden shadow-md h-40"
                     >
                       <img 
-                        src={`interno-${i}.jpeg`} 
+                        src={`${BASE_URL}interno-${i}.jpeg`} 
                         alt={`Escritório ${i}`} 
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
