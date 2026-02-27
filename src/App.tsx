@@ -97,6 +97,7 @@ export default function App() {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     
+    // Initialize GA4
     const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
     if (gaId) {
       ReactGA.initialize(gaId);
@@ -136,8 +137,8 @@ export default function App() {
             </a>
           </nav>
 
-          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="text-brand-primary w-6 h-6" /> : <Menu className="text-brand-primary w-6 h-6" />}
+          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X className="text-brand-primary" /> : <Menu className="text-brand-primary" />}
           </button>
         </div>
 
@@ -167,7 +168,7 @@ export default function App() {
       </header>
 
       <main>
-        {/* Hero Section - Ajustado padding mobile */}
+        {/* Hero Section */}
         <section id="inicio" className="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 skew-x-12 transform translate-x-20" />
@@ -183,7 +184,6 @@ export default function App() {
               <div className="inline-flex items-center gap-2 bg-brand-secondary/10 text-brand-secondary px-4 py-1 rounded-full text-xs md:sm font-bold mb-6">
                 <Award className="w-4 h-4" /> +20 Anos de Experiência
               </div>
-              {/* Título ajustado para mobile */}
               <h1 className="text-4xl md:text-7xl font-serif font-bold text-brand-primary leading-tight mb-6">
                 Garanta sua <span className="text-brand-secondary">Aposentadoria</span> com Segurança
               </h1>
@@ -255,7 +255,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* Restante do código permanece igual... */}
+        {/* Services Section */}
         <section id="servicos" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -288,6 +288,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* CTA Section */}
         <section className="py-20 bg-brand-light">
           <div className="max-w-5xl mx-auto px-6">
             <div className="bg-brand-primary rounded-[2rem] p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
@@ -312,6 +313,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* About Section */}
         <section id="sobre" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1">
@@ -358,6 +360,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* Location Section */}
         <section id="localizacao" className="py-24 bg-brand-light">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -422,6 +425,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* Testimonials Section */}
         <section id="depoimentos" className="py-24 bg-brand-light">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
@@ -457,6 +461,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* FAQ Section */}
         <section className="py-24 bg-white">
           <div className="max-w-3xl mx-auto px-6">
             <h2 className="text-4xl font-serif font-bold text-brand-primary text-center mb-12">Dúvidas Frequentes</h2>
@@ -481,6 +486,7 @@ export default function App() {
         </section>
       </main>
 
+      {/* Footer */}
       <footer className="bg-brand-primary text-white pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-16">
@@ -538,6 +544,26 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <motion.a
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noreferrer"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-6 right-6 z-50 bg-brand-accent text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-brand-accent/90 transition-all group md:hidden"
+      >
+        <MessageCircle className="w-7 h-7" />
+        <span className="absolute -top-1 -right-1 flex h-5 w-5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-brand-accent text-[10px] font-black items-center justify-center shadow-sm">
+            1
+          </span>
+        </span>
+      </motion.a>
     </div>
   );
 }
