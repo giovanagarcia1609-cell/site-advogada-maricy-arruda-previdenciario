@@ -18,8 +18,7 @@ import {
 import { useState, useEffect } from "react";
 import ReactGA from "react-ga4";
 
-const WHATSAPP_NUMBER = "5517991234567"; 
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de uma consulta sobre direito previdenciário.`;
+const WHATSAPP_LINK = "https://wa.me/5517991118161?text=Ol%C3%A1!%20Tudo%20bem%3F%20Gostaria%20de%20falar%20com%20um%20advogado%20especialista%20em%20Direito%20Previdenci%C3%A1rio";
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -185,14 +184,14 @@ export default function App() {
                 <Award className="w-4 h-4" /> +20 Anos de Experiência
               </div>
               <h1 className="text-4xl md:text-7xl font-serif font-bold text-brand-primary leading-tight mb-6">
-                Garanta sua <span className="text-brand-secondary">Aposentadoria</span> com Segurança
+                Sua <span className="text-brand-secondary">Aposentadoria</span> em Mirassol com Segurança
               </h1>
               <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-lg">
                 Especialista em Direito Previdenciário em Mirassol e Região. Lutamos pelo seu benefício do INSS com agilidade e transparência.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-whatsapp text-lg">
-                  <MessageCircle className="w-6 h-6" /> Falar com Especialista agora
+                  <MessageCircle className="w-6 h-6" /> Falar com Especialista<span className="hidden sm:inline"> agora</span>
                 </a>
                 <a href="#servicos" className="flex items-center justify-center gap-2 text-brand-primary font-semibold hover:gap-3 transition-all">
                   Ver nossos serviços <ChevronRight className="w-5 h-5" />
@@ -237,20 +236,20 @@ export default function App() {
         <section className="bg-brand-primary py-12">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-3xl md:text-4xl font-serif font-bold text-white mb-1">20+</p>
-              <p className="text-brand-secondary text-[10px] md:text-sm font-bold uppercase tracking-widest">Anos de Atuação</p>
+              <p className="text-4xl font-serif font-bold text-white mb-1">20+</p>
+              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Anos de Atuação</p>
             </div>
             <div>
-              <p className="text-3xl md:text-4xl font-serif font-bold text-white mb-1">1k+</p>
-              <p className="text-brand-secondary text-[10px] md:text-sm font-bold uppercase tracking-widest">Processos Ativos</p>
+              <p className="text-4xl font-serif font-bold text-white mb-1">1k+</p>
+              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Processos Ativos</p>
             </div>
             <div>
-              <p className="text-3xl md:text-4xl font-serif font-bold text-white mb-1">98%</p>
-              <p className="text-brand-secondary text-[10px] md:text-sm font-bold uppercase tracking-widest">Taxa de Sucesso</p>
+              <p className="text-4xl font-serif font-bold text-white mb-1">98%</p>
+              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Taxa de Sucesso</p>
             </div>
             <div>
-              <p className="text-3xl md:text-4xl font-serif font-bold text-white mb-1">24h</p>
-              <p className="text-brand-secondary text-[10px] md:text-sm font-bold uppercase tracking-widest">Resposta Rápida</p>
+              <p className="text-4xl font-serif font-bold text-white mb-1">24h</p>
+              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Resposta Rápida</p>
             </div>
           </div>
         </section>
@@ -259,9 +258,9 @@ export default function App() {
         <section id="servicos" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-6">Como podemos te ajudar?</h2>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-6">Especialista em Direito Previdenciário em Mirassol</h2>
               <p className="text-lg text-slate-600">
-                Oferecemos assessoria jurídica completa em todas as áreas do Direito Previdenciário, focando sempre no melhor resultado para você.
+                Oferecemos assessoria jurídica completa para garantir seus direitos junto ao INSS. Atendimento especializado em Mirassol e toda a região.
               </p>
             </div>
 
@@ -301,7 +300,7 @@ export default function App() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-whatsapp text-lg px-10">
-                    <MessageCircle className="w-6 h-6" /> Quero falar com Especialista
+                    <MessageCircle className="w-6 h-6" /> Falar com Especialista
                   </a>
                 </div>
               </div>
@@ -323,16 +322,16 @@ export default function App() {
                   Com mais de duas décadas dedicadas exclusivamente ao Direito Previdenciário, construí uma carreira pautada na ética, no compromisso e na busca incessante pelos direitos dos meus clientes.
                 </p>
                 <p>
-                  Entendo que cada processo não é apenas um número, mas a história de uma vida de trabalho que merece ser respeitada e recompensada com o benefício justo.
+                  Atuamos em casos de Aposentadoria por Idade, Tempo de Contribuição, Especial, além de pedidos de BPC/LOAS e revisões de benefícios. Se você procura por um advogado previdenciário em Mirassol, está no lugar certo.
                 </p>
                 <p>
-                  Nosso escritório em Mirassol é referência em agilidade e atendimento humanizado, tratando cada caso com a atenção e o detalhismo que o INSS exige.
+                  Nosso escritório em Mirassol é referência em agilidade e atendimento humanizado, tratando cada caso com a atenção e o detalhismo que o INSS exige para a concessão do seu benefício.
                 </p>
               </div>
               <div className="mt-10 grid grid-cols-2 gap-6">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-brand-secondary shrink-0" />
-                  <span className="font-medium">Especialista em Direito do Trabalho e Previdenciário</span>
+                  <span className="font-medium">Especialista em Direito Previdenciário</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-brand-secondary shrink-0" />
@@ -400,7 +399,7 @@ export default function App() {
                     >
                       <img 
                         src={`${BASE_URL}interno-${i}.jpeg`} 
-                        alt={`Escritório ${i}`} 
+                        alt={`Escritório de Advocacia Dra. Maricy Arruda em Mirassol - Sala de Atendimento ${i}`} 
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
                         loading="lazy"
@@ -520,11 +519,11 @@ export default function App() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold mb-6 text-brand-secondary uppercase tracking-widest">Contato</h4>
+              <h4 className="text-lg font-bold mb-6 text-brand-secondary uppercase tracking-widest">Contato em Mirassol</h4>
               <ul className="space-y-4 text-slate-300">
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-brand-secondary shrink-0" />
-                  <span>Rua Principal, 123 - Centro, Mirassol/SP</span>
+                  <span>Rua Quintino Bocaiúva, 2125 - Centro, Mirassol/SP</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-brand-secondary shrink-0" />
