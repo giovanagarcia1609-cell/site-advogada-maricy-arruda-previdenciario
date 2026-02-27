@@ -21,7 +21,6 @@ import ReactGA from "react-ga4";
 const WHATSAPP_NUMBER = "5517991234567"; 
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de uma consulta sobre direito previdenciário.`;
 
-// Esta variável pega o caminho correto do site no GitHub automaticamente
 const BASE_URL = import.meta.env.BASE_URL;
 
 const services = [
@@ -98,7 +97,6 @@ export default function App() {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     
-    // Initialize GA4
     const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
     if (gaId) {
       ReactGA.initialize(gaId);
@@ -111,11 +109,11 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-6"}`}>
+      <header className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-2 md:py-3" : "bg-transparent py-4 md:py-6"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <img src={`${BASE_URL}logo.jpg`} alt="Maricy Arruda Logo" className="h-12 w-auto" />
-            <span className="text-xl font-serif font-bold text-brand-primary">
+          <div className="flex items-center gap-2 md:gap-3">
+            <img src={`${BASE_URL}logo.jpg`} alt="Maricy Arruda Logo" className="h-10 md:h-12 w-auto" />
+            <span className="text-lg md:text-xl font-serif font-bold text-brand-primary">
               Maricy Arruda
             </span>
           </div>
@@ -138,8 +136,8 @@ export default function App() {
             </a>
           </nav>
 
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="text-brand-primary" /> : <Menu className="text-brand-primary" />}
+          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X className="text-brand-primary w-6 h-6" /> : <Menu className="text-brand-primary w-6 h-6" />}
           </button>
         </div>
 
@@ -169,8 +167,8 @@ export default function App() {
       </header>
 
       <main>
-        {/* Hero Section */}
-        <section id="inicio" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        {/* Hero Section - Ajustado padding mobile */}
+        <section id="inicio" className="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 skew-x-12 transform translate-x-20" />
           </div>
@@ -182,13 +180,14 @@ export default function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 bg-brand-secondary/10 text-brand-secondary px-4 py-1 rounded-full text-sm font-bold mb-6">
+              <div className="inline-flex items-center gap-2 bg-brand-secondary/10 text-brand-secondary px-4 py-1 rounded-full text-xs md:sm font-bold mb-6">
                 <Award className="w-4 h-4" /> +20 Anos de Experiência
               </div>
-              <h1 className="text-5xl md:text-7xl font-serif font-bold text-brand-primary leading-tight mb-6">
+              {/* Título ajustado para mobile */}
+              <h1 className="text-4xl md:text-7xl font-serif font-bold text-brand-primary leading-tight mb-6">
                 Garanta sua <span className="text-brand-secondary">Aposentadoria</span> com Segurança
               </h1>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-lg">
+              <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-lg">
                 Especialista em Direito Previdenciário em Mirassol e Região. Lutamos pelo seu benefício do INSS com agilidade e transparência.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -238,25 +237,25 @@ export default function App() {
         <section className="bg-brand-primary py-12">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-4xl font-serif font-bold text-white mb-1">20+</p>
-              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Anos de Atuação</p>
+              <p className="text-3xl md:text-4xl font-serif font-bold text-white mb-1">20+</p>
+              <p className="text-brand-secondary text-[10px] md:text-sm font-bold uppercase tracking-widest">Anos de Atuação</p>
             </div>
             <div>
-              <p className="text-4xl font-serif font-bold text-white mb-1">1k+</p>
-              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Processos Ativos</p>
+              <p className="text-3xl md:text-4xl font-serif font-bold text-white mb-1">1k+</p>
+              <p className="text-brand-secondary text-[10px] md:text-sm font-bold uppercase tracking-widest">Processos Ativos</p>
             </div>
             <div>
-              <p className="text-4xl font-serif font-bold text-white mb-1">98%</p>
-              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Taxa de Sucesso</p>
+              <p className="text-3xl md:text-4xl font-serif font-bold text-white mb-1">98%</p>
+              <p className="text-brand-secondary text-[10px] md:text-sm font-bold uppercase tracking-widest">Taxa de Sucesso</p>
             </div>
             <div>
-              <p className="text-4xl font-serif font-bold text-white mb-1">24h</p>
-              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Resposta Rápida</p>
+              <p className="text-3xl md:text-4xl font-serif font-bold text-white mb-1">24h</p>
+              <p className="text-brand-secondary text-[10px] md:text-sm font-bold uppercase tracking-widest">Resposta Rápida</p>
             </div>
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Restante do código permanece igual... */}
         <section id="servicos" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -289,7 +288,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-20 bg-brand-light">
           <div className="max-w-5xl mx-auto px-6">
             <div className="bg-brand-primary rounded-[2rem] p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
@@ -314,7 +312,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* About Section */}
         <section id="sobre" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1">
@@ -361,7 +358,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Location Section */}
         <section id="localizacao" className="py-24 bg-brand-light">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -426,7 +422,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
         <section id="depoimentos" className="py-24 bg-brand-light">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
@@ -462,7 +457,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* FAQ Section */}
         <section className="py-24 bg-white">
           <div className="max-w-3xl mx-auto px-6">
             <h2 className="text-4xl font-serif font-bold text-brand-primary text-center mb-12">Dúvidas Frequentes</h2>
@@ -487,7 +481,6 @@ export default function App() {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="bg-brand-primary text-white pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-16">
