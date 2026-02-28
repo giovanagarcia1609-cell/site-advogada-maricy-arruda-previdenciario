@@ -29,7 +29,7 @@ const services = [
   },
   {
     title: "BPC / LOAS",
-    description: "Auxílio para idosos acima de 65 anos or pessoas com deficiência em situação de vulnerabilidade.",
+    description: "Auxílio para idosos acima de 65 anos ou pessoas com deficiência em situação de vulnerabilidade.",
     icon: <ShieldCheck className="w-8 h-8 text-brand-secondary" />
   },
   {
@@ -116,16 +116,24 @@ export default function App() {
             <a href="#sobre" className="text-sm font-medium hover:text-brand-secondary transition-colors">Sobre</a>
             <a href="#localizacao" className="text-sm font-medium hover:text-brand-secondary transition-colors">Localização</a>
             <a href="#depoimentos" className="text-sm font-medium hover:text-brand-secondary transition-colors">Depoimentos</a>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="relative bg-brand-accent text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-brand-accent/90 transition-all shadow-lg flex items-center gap-2 group">
+            <motion.a 
+              href={WHATSAPP_LINK} 
+              target="_blank" 
+              rel="noreferrer" 
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="relative bg-brand-accent text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-brand-accent/90 transition-all shadow-lg flex items-center gap-2 group"
+            >
               <MessageCircle className="w-4 h-4" />
               Falar com Especialista
+              {/* Badge de Notificação */}
               <span className="absolute -top-2 -right-1 flex h-5 w-5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-brand-accent text-[10px] font-black items-center justify-center shadow-sm">
                   1
                 </span>
               </span>
-            </a>
+            </motion.a>
           </nav>
 
           <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -145,7 +153,14 @@ export default function App() {
             <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium">Sobre</a>
             <a href="#localizacao" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium">Localização</a>
             <a href="#depoimentos" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium">Depoimentos</a>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="relative btn-whatsapp">
+            <motion.a 
+              href={WHATSAPP_LINK} 
+              target="_blank" 
+              rel="noreferrer" 
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="relative btn-whatsapp"
+            >
               <MessageCircle className="w-5 h-5" /> WhatsApp
               <span className="absolute -top-1 -right-1 flex h-5 w-5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -153,7 +168,7 @@ export default function App() {
                   1
                 </span>
               </span>
-            </a>
+            </motion.a>
           </motion.div>
         )}
       </header>
@@ -219,6 +234,7 @@ export default function App() {
                 <p className="text-brand-primary font-serif font-bold text-lg mb-1">Dra. Maricy Arruda</p>
                 <p className="text-xs text-slate-500 uppercase tracking-wider font-bold">OAB/SP 194.672</p>
               </div>
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-brand-secondary/20 rounded-full blur-3xl -z-10" />
             </motion.div>
           </div>
         </section>
@@ -295,6 +311,10 @@ export default function App() {
                   </a>
                 </div>
               </div>
+              <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-brand-secondary rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+              </div>
             </div>
           </div>
         </section>
@@ -311,15 +331,37 @@ export default function App() {
                 <p>
                   Atuamos em casos de Aposentadoria por Idade, Tempo de Contribuição, Especial, além de pedidos de BPC/LOAS e revisões de benefícios. Se você procura por um advogado previdenciário em Mirassol, está no lugar certo.
                 </p>
+                <p>
+                  Nosso escritório em Mirassol é referência em agilidade e atendimento humanizado, tratando cada caso com a atenção e o detalhismo que o INSS exige para a concessão do seu benefício.
+                </p>
+              </div>
+              <div className="mt-10 grid grid-cols-2 gap-6">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-brand-secondary shrink-0" />
+                  <span className="font-medium">Especialista em Direito Previdenciário</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-brand-secondary shrink-0" />
+                  <span className="font-medium">Atendimento em todo o Brasil (Online)</span>
+                </div>
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <img 
-                src={`${BASE_URL}hero.jpg`} 
-                alt="Dra. Maricy Arruda" 
-                className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-[4/5]"
-                referrerPolicy="no-referrer"
-              />
+              <div className="relative">
+                <img 
+                  src={`${BASE_URL}hero.jpg`} 
+                  alt="Dra. Maricy Arruda" 
+                  className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-[4/5] object-top"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                />
+                <div className="absolute -bottom-10 -right-10 hidden lg:block">
+                  <div className="bg-brand-secondary p-8 rounded-2xl text-white shadow-xl">
+                    <p className="text-4xl font-serif font-bold mb-1">20+</p>
+                    <p className="text-sm font-bold uppercase tracking-widest opacity-80">Anos de História</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -327,30 +369,62 @@ export default function App() {
         {/* Location Section */}
         <section id="localizacao" className="py-24 bg-brand-light">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-12 text-center">Onde Estamos</h2>
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
+                <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-8">Onde Estamos</h2>
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                  Nosso escritório está estrategicamente localizado no coração de Mirassol, oferecendo um ambiente acolhedor e profissional para atender você e sua família com todo o conforto necessário.
+                </p>
+                
                 <div className="space-y-6 mb-10">
                   <div className="flex items-start gap-4">
-                    <MapPin className="w-6 h-6 text-brand-primary" />
+                    <div className="bg-brand-primary/10 p-3 rounded-lg">
+                      <MapPin className="w-6 h-6 text-brand-primary" />
+                    </div>
                     <div>
                       <p className="font-bold text-brand-primary">Endereço</p>
                       <p className="text-slate-600">Rua Quintino Bocaiúva, 2125 - Centro, Mirassol/SP</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <Clock className="w-6 h-6 text-brand-primary" />
+                    <div className="bg-brand-primary/10 p-3 rounded-lg">
+                      <Clock className="w-6 h-6 text-brand-primary" />
+                    </div>
                     <div>
-                      <p className="font-bold text-brand-primary">Horário</p>
+                      <p className="font-bold text-brand-primary">Horário de Atendimento</p>
                       <p className="text-slate-600">Segunda a Sexta: 08:00 às 18:00</p>
                     </div>
                   </div>
                 </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {[2, 3, 4, 5].map((i) => (
+                    <motion.div 
+                      key={i}
+                      whileHover={{ scale: 1.05 }}
+                      className="rounded-xl overflow-hidden shadow-md h-40"
+                    >
+                      <img 
+                        src={`${BASE_URL}interno-${i}.jpeg`} 
+                        alt={`Escritório de Advocacia Dra. Maricy Arruda em Mirassol - Sala de Atendimento ${i}`} 
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-              <div className="h-[400px] rounded-3xl overflow-hidden shadow-2xl">
+
+              <div className="h-[500px] rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.876543210!2d-49.512345678!3d-20.812345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdad123456789%3A0x1234567890abcdef!2sMirassol%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
-                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
             </div>
@@ -358,25 +432,43 @@ export default function App() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="depoimentos" className="py-24 bg-white">
+        <section id="depoimentos" className="py-24 bg-brand-light">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-16 text-center">Depoimentos</h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-6">O que nossos clientes dizem</h2>
+              <div className="flex justify-center gap-1 text-yellow-400">
+                {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-6 h-6 fill-current" />)}
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
-                <div key={i} className="bg-brand-light p-8 rounded-2xl shadow-sm">
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
+                >
                   <div className="flex text-yellow-400 mb-4">
                     {[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                   </div>
                   <p className="text-slate-600 italic mb-6">"{t.text}"</p>
-                  <span className="font-bold text-brand-primary">{t.name}</span>
-                </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-brand-primary">
+                      {t.name[0]}
+                    </div>
+                    <span className="font-bold text-brand-primary">{t.name}</span>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 bg-brand-light">
+        <section className="py-24 bg-white">
           <div className="max-w-3xl mx-auto px-6">
             <h2 className="text-4xl font-serif font-bold text-brand-primary text-center mb-12">Dúvidas Frequentes</h2>
             <div className="space-y-6">
@@ -390,6 +482,12 @@ export default function App() {
                 </div>
               ))}
             </div>
+            <div className="mt-12 text-center">
+              <p className="text-slate-500 mb-6">Ainda tem dúvidas?</p>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-primary inline-flex">
+                Falar com a Dra. Maricy
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -397,36 +495,90 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-brand-primary text-white pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12 mb-16">
-            <div>
-              <h4 className="text-2xl font-serif font-bold mb-6">Maricy Arruda</h4>
-              <p className="text-slate-300">Advocacia especializada em Direito Previdenciário em Mirassol/SP.</p>
+          <div className="grid md:grid-cols-4 gap-12 mb-16">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-2xl font-serif font-bold text-white">
+                  Maricy Arruda
+                </span>
+              </div>
+              <p className="text-slate-300 max-w-sm mb-8">
+                Advocacia especializada em Direito Previdenciário. Mais de 20 anos garantindo o futuro de centenas de famílias em Mirassol e região.
+              </p>
+              <div className="flex gap-4">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-secondary transition-colors">
+                  <Phone className="w-5 h-5" />
+                </a>
+                <a href="mailto:maricy_arrida@hotmail.com" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-secondary transition-colors">
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
             </div>
+
             <div>
-              <h4 className="text-lg font-bold mb-6 text-brand-secondary uppercase tracking-widest">Contato</h4>
+              <h4 className="text-lg font-bold mb-6 text-brand-secondary uppercase tracking-widest">Links Rápidos</h4>
               <ul className="space-y-4 text-slate-300">
-                <li className="flex items-center gap-3"><Phone className="w-5 h-5" /> (17) 99111-8161</li>
-                <li className="flex items-center gap-3"><Mail className="w-5 h-5" /> maricy_arrida@hotmail.com</li>
+                <li><a href="#inicio" className="hover:text-white transition-colors">Início</a></li>
+                <li><a href="#servicos" className="hover:text-white transition-colors">Serviços</a></li>
+                <li><a href="#sobre" className="hover:text-white transition-colors">Sobre</a></li>
+                <li><a href="#depoimentos" className="hover:text-white transition-colors">Depoimentos</a></li>
               </ul>
             </div>
+
             <div>
-              <h4 className="text-lg font-bold mb-6 text-brand-secondary uppercase tracking-widest">Endereço</h4>
-              <p className="text-slate-300">Rua Quintino Bocaiúva, 2125 - Centro, Mirassol/SP</p>
+              <h4 className="text-lg font-bold mb-6 text-brand-secondary uppercase tracking-widest">Contato em Mirassol</h4>
+              <ul className="space-y-4 text-slate-300">
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-brand-secondary shrink-0" />
+                  <span>Rua Quintino Bocaiúva, 2125 - Centro, Mirassol/SP</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-brand-secondary shrink-0" />
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">(17) 99111-8161</a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-brand-secondary shrink-0" />
+                  <span>maricy_arrida@hotmail.com</span>
+                </li>
+              </ul>
             </div>
           </div>
+
           <div className="pt-10 border-t border-white/10 text-center text-slate-400 text-sm">
-            <p>© {new Date().getFullYear()} Maricy Arruda Advocacia. OAB/SP 194.672</p>
+            <p>© {new Date().getFullYear()} Maricy Arruda Advocacia. Todos os direitos reservados. OAB/SP 194.672</p>
           </div>
         </div>
       </footer>
 
-      {/* Floating WhatsApp Button */}
+      {/* Botão Flutuante do WhatsApp com Pulsação e Badge */}
       <motion.a
-        href={WHATSAPP_LINK} target="_blank" rel="noreferrer"
-        initial={{ scale: 0 }} animate={{ scale: 1 }}
-        className="fixed bottom-6 right-6 z-50 bg-brand-accent text-white p-4 rounded-full shadow-2xl md:hidden"
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noreferrer"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ 
+          scale: [1, 1.05, 1],
+          opacity: 1 
+        }}
+        transition={{
+          scale: {
+            repeat: Infinity,
+            duration: 2,
+            ease: "easeInOut"
+          },
+          opacity: { duration: 0.6 }
+        }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-6 right-6 z-50 bg-brand-accent text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-brand-accent/90 transition-all group md:hidden"
       >
         <MessageCircle className="w-7 h-7" />
+        <span className="absolute -top-1 -right-1 flex h-5 w-5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-brand-accent text-[10px] font-black items-center justify-center shadow-sm">
+            1
+          </span>
+        </span>
       </motion.a>
     </div>
   );
