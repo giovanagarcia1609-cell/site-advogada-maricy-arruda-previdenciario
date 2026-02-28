@@ -29,7 +29,7 @@ const services = [
   },
   {
     title: "BPC / LOAS",
-    description: "Auxílio para idosos acima de 65 anos ou pessoas com deficiência em situação de vulnerabilidade.",
+    description: "Auxílio para idosos acima de 65 anos or pessoas com deficiência em situação de vulnerabilidade.",
     icon: <ShieldCheck className="w-8 h-8 text-brand-secondary" />
   },
   {
@@ -189,6 +189,15 @@ export default function App() {
                   Ver nossos serviços <ChevronRight className="w-5 h-5" />
                 </a>
               </div>
+              
+              <div className="mt-12 flex items-center gap-4">
+                <div className="text-sm">
+                  <div className="flex text-yellow-400 mb-1">
+                    {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                  </div>
+                  <p className="text-slate-500 font-medium">+500 clientes satisfeitos em Mirassol</p>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -222,7 +231,7 @@ export default function App() {
               <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Anos de Atuação</p>
             </div>
             <div>
-              <p className="text-4xl font-serif font-bold text-white mb-1">1k</p>
+              <p className="text-4xl font-serif font-bold text-white mb-1">+1k</p>
               <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">de processos</p>
             </div>
             <div>
