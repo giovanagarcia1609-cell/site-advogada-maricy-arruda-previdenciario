@@ -66,11 +66,6 @@ const testimonials = [
     rating: 5
   },
   {
-    name: "João Pereira",
-    text: "Excelente profissional. Muito atenciosa e explicou cada passo do processo do meu BPC. Recomendo a todos em Mirassol.",
-    rating: 5
-  },
-  {
     name: "Ana Oliveira",
     text: "O planejamento previdenciário que ela fez me salvou de uma aposentadoria muito menor. Valeu cada centavo.",
     rating: 5
@@ -219,11 +214,211 @@ export default function App() {
           </div>
         </section>
 
-        {/* Serviços e demais seções continuam iguais... */}
-        {/* (Omitido aqui por brevidade, mas o arquivo completo no seu projeto deve ser mantido) */}
+        {/* Stats Section */}
+        <section className="bg-brand-primary py-12">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <p className="text-4xl font-serif font-bold text-white mb-1">20+</p>
+              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Anos de Atuação</p>
+            </div>
+            <div>
+              <p className="text-4xl font-serif font-bold text-white mb-1">1k</p>
+              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">de processos</p>
+            </div>
+            <div>
+              <p className="text-4xl font-serif font-bold text-white mb-1">98%</p>
+              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Taxa de Sucesso</p>
+            </div>
+            <div>
+              <p className="text-4xl font-serif font-bold text-white mb-1">Rápido</p>
+              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Atendimento</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="servicos" className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-6">Especialista em Direito Previdenciário em Mirassol</h2>
+              <p className="text-lg text-slate-600">
+                Oferecemos assessoria jurídica completa para garantir seus direitos junto ao INSS. Atendimento especializado em Mirassol e toda a região.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -10 }}
+                  className="card-service"
+                >
+                  <div className="mb-6">{service.icon}</div>
+                  <h3 className="text-2xl font-serif font-bold text-brand-primary mb-4">{service.title}</h3>
+                  <p className="text-slate-600 leading-relaxed mb-6">{service.description}</p>
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="text-brand-secondary font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                    Consultar agora <ChevronRight className="w-4 h-4" />
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-brand-light">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="bg-brand-primary rounded-[2rem] p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
+                  Não perca mais tempo lutando sozinho contra o INSS
+                </h2>
+                <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+                  Muitas pessoas perdem dinheiro por não conhecerem seus direitos. Deixe um especialista cuidar do seu futuro.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-whatsapp text-lg px-10">
+                    <MessageCircle className="w-6 h-6" /> Falar com Especialista
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="sobre" className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div className="order-2 md:order-1">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-8">Dra. Maricy Arruda</h2>
+              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p>
+                  Com mais de duas décadas dedicadas exclusivamente ao Direito Previdenciário, construí uma carreira pautada na ética, no compromisso e na busca incessante pelos direitos dos meus clientes.
+                </p>
+                <p>
+                  Atuamos em casos de Aposentadoria por Idade, Tempo de Contribuição, Especial, além de pedidos de BPC/LOAS e revisões de benefícios. Se você procura por um advogado previdenciário em Mirassol, está no lugar certo.
+                </p>
+              </div>
+            </div>
+            <div className="order-1 md:order-2">
+              <img 
+                src={`${BASE_URL}hero.jpg`} 
+                alt="Dra. Maricy Arruda" 
+                className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-[4/5]"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Location Section */}
+        <section id="localizacao" className="py-24 bg-brand-light">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-12 text-center">Onde Estamos</h2>
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div>
+                <div className="space-y-6 mb-10">
+                  <div className="flex items-start gap-4">
+                    <MapPin className="w-6 h-6 text-brand-primary" />
+                    <div>
+                      <p className="font-bold text-brand-primary">Endereço</p>
+                      <p className="text-slate-600">Rua Quintino Bocaiúva, 2125 - Centro, Mirassol/SP</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <Clock className="w-6 h-6 text-brand-primary" />
+                    <div>
+                      <p className="font-bold text-brand-primary">Horário</p>
+                      <p className="text-slate-600">Segunda a Sexta: 08:00 às 18:00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[400px] rounded-3xl overflow-hidden shadow-2xl">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.876543210!2d-49.512345678!3d-20.812345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdad123456789%3A0x1234567890abcdef!2sMirassol%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="depoimentos" className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-16 text-center">Depoimentos</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((t, i) => (
+                <div key={i} className="bg-brand-light p-8 rounded-2xl shadow-sm">
+                  <div className="flex text-yellow-400 mb-4">
+                    {[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                  </div>
+                  <p className="text-slate-600 italic mb-6">"{t.text}"</p>
+                  <span className="font-bold text-brand-primary">{t.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-24 bg-brand-light">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2 className="text-4xl font-serif font-bold text-brand-primary text-center mb-12">Dúvidas Frequentes</h2>
+            <div className="space-y-6">
+              {faqs.map((faq, i) => (
+                <div key={i} className="border-b border-slate-200 pb-6">
+                  <h3 className="text-xl font-serif font-bold text-brand-primary mb-3 flex items-center gap-3">
+                    <HelpCircle className="w-5 h-5 text-brand-secondary" />
+                    {faq.question}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed pl-8">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
-      {/* Footer e Botão Flutuante continuam iguais... */}
+      {/* Footer */}
+      <footer className="bg-brand-primary text-white pt-20 pb-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-12 mb-16">
+            <div>
+              <h4 className="text-2xl font-serif font-bold mb-6">Maricy Arruda</h4>
+              <p className="text-slate-300">Advocacia especializada em Direito Previdenciário em Mirassol/SP.</p>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold mb-6 text-brand-secondary uppercase tracking-widest">Contato</h4>
+              <ul className="space-y-4 text-slate-300">
+                <li className="flex items-center gap-3"><Phone className="w-5 h-5" /> (17) 99111-8161</li>
+                <li className="flex items-center gap-3"><Mail className="w-5 h-5" /> maricy_arrida@hotmail.com</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold mb-6 text-brand-secondary uppercase tracking-widest">Endereço</h4>
+              <p className="text-slate-300">Rua Quintino Bocaiúva, 2125 - Centro, Mirassol/SP</p>
+            </div>
+          </div>
+          <div className="pt-10 border-t border-white/10 text-center text-slate-400 text-sm">
+            <p>© {new Date().getFullYear()} Maricy Arruda Advocacia. OAB/SP 194.672</p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Floating WhatsApp Button */}
+      <motion.a
+        href={WHATSAPP_LINK} target="_blank" rel="noreferrer"
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+        className="fixed bottom-6 right-6 z-50 bg-brand-accent text-white p-4 rounded-full shadow-2xl md:hidden"
+      >
+        <MessageCircle className="w-7 h-7" />
+      </motion.a>
     </div>
   );
 }
