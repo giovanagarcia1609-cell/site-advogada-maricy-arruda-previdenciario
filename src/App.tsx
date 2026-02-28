@@ -127,6 +127,7 @@ export default function App() {
             <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="relative bg-brand-accent text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-brand-accent/90 transition-all shadow-lg flex items-center gap-2 group">
               <MessageCircle className="w-4 h-4" />
               Falar com Especialista
+              {/* Speech bubble / Badge */}
               <span className="absolute -top-2 -right-1 flex h-5 w-5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-brand-accent text-[10px] font-black items-center justify-center shadow-sm">
@@ -248,8 +249,8 @@ export default function App() {
               <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Taxa de Sucesso</p>
             </div>
             <div>
-              <p className="text-4xl font-serif font-bold text-white mb-1">24h</p>
-              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Resposta Rápida</p>
+              <p className="text-4xl font-serif font-bold text-white mb-1">Rápido</p>
+              <p className="text-brand-secondary text-sm font-bold uppercase tracking-widest">Atendimento</p>
             </div>
           </div>
         </section>
