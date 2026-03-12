@@ -126,7 +126,7 @@ export default function App() {
             >
               <MessageCircle className="w-4 h-4" />
               Falar com Especialista
-              {/* Badge de Notificação */}
+              {/* Speech bubble / Badge */}
               <span className="absolute -top-2 -right-1 flex h-5 w-5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-brand-accent text-[10px] font-black items-center justify-center shadow-sm">
@@ -383,7 +383,7 @@ export default function App() {
                     </div>
                     <div>
                       <p className="font-bold text-brand-primary">Endereço</p>
-                      <p className="text-slate-600">Rua Quintino Bocaiúva, 2125 - Centro, Mirassol/SP</p>
+                      <p className="text-slate-600">Rua São Pedro, 1927 - Centro, Mirassol/SP - CEP 15130-063</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -418,7 +418,7 @@ export default function App() {
 
               <div className="h-[500px] rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.876543210!2d-49.512345678!3d-20.812345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdad123456789%3A0x1234567890abcdef!2sMirassol%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.071658428178!2d-49.51864142410313!3d-20.807106867017646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdad605963969b%3A0x892a06584343900!2sR.%20S%C3%A3o%20Pedro%2C%201927%20-%20Centro%2C%20Mirassol%20-%20SP%2C%2015130-063!5e0!3m2!1spt-BR!2sbr!4v1710250000000!5m2!1spt-BR!2sbr" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -530,7 +530,7 @@ export default function App() {
               <ul className="space-y-4 text-slate-300">
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-brand-secondary shrink-0" />
-                  <span>Rua Quintino Bocaiúva, 2125 - Centro, Mirassol/SP</span>
+                  <span>Rua São Pedro, 1927 - Centro, Mirassol/SP - CEP 15130-063</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-brand-secondary shrink-0" />
@@ -550,7 +550,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Botão Flutuante do WhatsApp com Pulsação e Badge */}
+      {/* Floating WhatsApp Button */}
       <motion.a
         href={WHATSAPP_LINK}
         target="_blank"
