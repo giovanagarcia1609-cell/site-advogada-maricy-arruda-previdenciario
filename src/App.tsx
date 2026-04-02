@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const WHATSAPP_LINK = "https://wa.me/5517991118161?text=Ol%C3%A1!%20Tudo%20bem%3F%20Gostaria%20de%20falar%20com%20um%20advogado%20especialista%20em%20Direito%20Previdenci%C3%A1rio";
+const WHATSAPP_LINK = "https://api.whatsapp.com/send/?phone=551717%20981569789&text=Ol%C3%A1%21+Tudo+bem%3F+Gostaria+de+falar+com+um+advogado+especialista+em+Direito+Previdenci%C3%A1rio&type=phone_number&app_absent=0";
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -208,7 +208,7 @@ export default function App() {
               <div className="mt-12 flex items-center gap-4">
                 <div className="text-sm">
                   <div className="flex text-yellow-400 mb-1">
-                    {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                    {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-4 h-4 fill-current" fill="currentColor" />)}
                   </div>
                   <p className="text-slate-500 font-medium">+500 clientes satisfeitos em Mirassol</p>
                 </div>
@@ -418,7 +418,7 @@ export default function App() {
 
               <div className="h-[500px] rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.071658428178!2d-49.51864142410313!3d-20.807106867017646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdad605963969b%3A0x892a06584343900!2sR.%20S%C3%A3o%20Pedro%2C%201927%20-%20Centro%2C%20Mirassol%20-%20SP%2C%2015130-063!5e0!3m2!1spt-BR!2sbr!4v1710250000000!5m2!1spt-BR!2sbr" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.071658428178!2d-49.51864142410313!3d-20.807106867017646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdad605963969b%3A0x892a06584343900!2sMaricy%20Arruda%20Advocacia%20Previdenci%C3%A1ria!5e0!3m2!1spt-BR!2sbr!4v1710250000000!5m2!1spt-BR!2sbr" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -437,11 +437,11 @@ export default function App() {
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-6">O que nossos clientes dizem</h2>
               <div className="flex justify-center gap-1 text-yellow-400">
-                {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-6 h-6 fill-current" />)}
+                {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-6 h-6 fill-current" fill="currentColor" />)}
               </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
               {testimonials.map((t, i) => (
                 <motion.div 
                   key={i} 
@@ -452,7 +452,7 @@ export default function App() {
                   className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
                 >
                   <div className="flex text-yellow-400 mb-4">
-                    {[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                    {[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" fill="currentColor" />)}
                   </div>
                   <p className="text-slate-600 italic mb-6">"{t.text}"</p>
                   <div className="flex items-center gap-3">
@@ -463,6 +463,18 @@ export default function App() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+
+            <div className="text-center">
+              <a 
+                href="https://www.google.com/search?q=Advocacia+Maricy+Arruda+-+Direito+Previdenci%C3%A1rio&stick=H4sIAAAAAAAA_-NgU1I1qLA0SUpJTDNPSzSyNDY3NUyxAgqlWqQaGpsbWCQnW5pYJhouYjV0TCnLT05MzkxU8E0sykyuVHAsKipNSVTQVXDJLErNLMlXCChKLctMSc1Lzjy8sCgzHwD1bcLcXQAAAA&hl=pt-BR&mat=CbBd-3cCLyJiElcBTVDHnpvy7kG16_PbMqJlvIVnAQoC3zQC6lap7NyzskoGXSB66y_JskqnSVAvY4VyDbKYMzo807n-en_ogSgzcRo3Qw4S9rb1BIFMzJ8CfMHkkzECTI4&authuser=1" 
+                target="_blank" 
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-secondary transition-colors"
+              >
+                <Star className="w-5 h-5 fill-current text-yellow-400" fill="currentColor" />
+                Ver todas as avaliações no Google
+              </a>
             </div>
           </div>
         </section>
@@ -534,7 +546,7 @@ export default function App() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-brand-secondary shrink-0" />
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">(17) 99111-8161</a>
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">(17) 98156-9789</a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-brand-secondary shrink-0" />
